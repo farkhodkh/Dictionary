@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "ru.farkhodkhaknazarov.dictionary"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "YANDEXTRANSLATEAPIKEY", '"trnsl.1.1.20200526T082203Z.d73b91635d00457d.d60e75d30e40508aad956055af45778ae9ff9745"')
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions 'PersonalDictionary'
+
+    productFlavors {
+        farkhod {
+            dimension = 'PersonalDictionary'
+            buildConfigField("String", "YANDEXTRANSLATEAPIKEY", '"trnsl.1.1.20200526T082203Z.d73b91635d00457d.d60e75d30e40508aad956055af45778ae9ff9745"')
+        }
+        sber {
+            dimension = 'PersonalDictionary'
+            buildConfigField("String", "YANDEXTRANSLATEAPIKEY", '"trnsl.1.1.20200526T082203Z.d73b91635d00457d.d60e75d30e40508aad956055af45778ae9ff9745"')
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.room:room-runtime:2.2.5'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation libs.appcompat
+    implementation libs.coreKtx
+    implementation libs.constraintLayout
+    implementation libs.material
+    implementation libs.fragment
+    implementation libs.recyclerView
+    implementation libs.glade
+    implementation libs.volley
+    implementation libs.gson
+    kapt libs.roomCompiler
+    implementation libs.roomRuntime
+    implementation libs.coroutinesCore
+    implementation libs.coroutinesAndroid
+}

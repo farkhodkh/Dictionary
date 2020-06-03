@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="translation_direction">
+        <item>ru-en</item>
+        <item>en-ru</item>
+        <item>ru-fr</item>
+        <item>fr-ru</item>
+    </string-array>
+
+    <string-array name="translation_direction_description">
+        <item>Русский-Английский</item>
+        <item>Английский-Русский</item>
+        <item>Русский-Французский</item>
+        <item>Французский-Русский</item>
+    </string-array>
+</resources>

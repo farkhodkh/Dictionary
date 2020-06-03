@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Dictionary</string>
+    <string name="search_hint">Найти</string>
+    <string name="toolbar_title">Словарь</string>
+    <string name="action_settings">Настройки</string>
+    <string name="settings_title">Настройки</string>
+</resources>

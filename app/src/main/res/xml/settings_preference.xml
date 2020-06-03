@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="translationDirection"
+        android:title="Направление перевода"
+        android:summary="Устанавливает направление перевода"
+        android:defaultValue="ru-en"
+        android:entries="@array/translation_direction_description"
+        android:entryValues="@array/translation_direction"
+        android:dialogTitle="Выберите направление перевода" />
+</PreferenceScreen>
